@@ -10,6 +10,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
 import {CatPageComponent} from './cat-page/cat-page.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {AuthGuardService} from "./auth-guard.service";
+import {AuthService} from "./auth.service";
 
 // для всего перечисленного лучше всего создать отдельный модульный файл и там вести работу, что и было сделанно
 
@@ -27,7 +29,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
         HttpClientModule,
         AppRoutingModule
     ],
-    providers: [CarsService],
+    providers: [CarsService, AuthGuardService, AuthService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
