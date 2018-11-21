@@ -1,23 +1,43 @@
 <div class="container">
-  <nav style="margin-bottom: 20px; display: flex" class="navbar navbar-expand-lg  navbar-light bg-light">
-    <div class="container-fluid">
-      <ul class="nav">
+    <nav style="margin-bottom: 20px; display: flex" class="navbar navbar-expand-lg  navbar-light bg-light">
+        <div class="container-fluid">
+            <ul class="nav">
 
-        <!-- указываем путь к страницам -->
-        <!-- меняем ркуа на routerLink, стр перестанет перезагружаться при смене контента -->
+                <!-- указываем путь к страницам -->
+                <!-- меняем ркуа на routerLink, стр перестанет перезагружаться при смене контента -->
 
-        <li class="active navbar-toggler"><a routerLink="/">Главная</a></li>
-        <li class="navbar-toggler"><a [routerLink]="'/cars'">Машины</a></li>
-      </ul>
+                <!-- routerLinkActive="active" - какой путь у ссылки, если совпадает с тем, что в браузере, то задаст
+                указанный в него класс. Указанный класс будет добавляться в меню, в html
+                 -->
+
+                <!-- [routerLinkActiveOptions] - описывет условия при которых будет добавляться класс, указанный в routerLinkActive -->
+                <!-- exact - параметр, принимающий только true или false, и если будет стоять true, то класс будет
+                добавляться, если находимся на указанном роуте -->
+
+                <li class="navbar-toggler"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <a routerLink="/">Главная</a>
+                </li>
+
+
+                <li class="navbar-toggler"
+                    routerLinkActive="active"
+                >
+                    <a [routerLink]="'/cars'">Машины</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <!--
+            '<router-outlet>' - это компонент,
+            который будет заменен на подгружаемый компонент по определенному роуту
+            -->
+            <router-outlet></router-outlet>
+        </div>
     </div>
-  </nav>
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
-      <!--
-      '<router-outlet>' - это компонент,
-      который будет заменен на подгружаемый компонент по определенному роуту
-      -->
-    <router-outlet></router-outlet>
-    </div>
-  </div>
 </div>
