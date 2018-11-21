@@ -9,6 +9,7 @@ import {CarsService} from './cars.service';
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
 import {CatPageComponent} from './cat-page/cat-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // для всего перечисленного лучше всего создать отдельный модульный файл и там вести работу, что и было сделанно
 
@@ -17,7 +18,8 @@ import {CatPageComponent} from './cat-page/cat-page.component';
         AppComponent,
         HomePageComponent,
         CarsPageComponent,
-        CatPageComponent
+        CatPageComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,
