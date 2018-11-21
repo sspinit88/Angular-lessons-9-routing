@@ -25,7 +25,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        // импортируем
         AppRoutingModule
     ],
     providers: [CarsService],
