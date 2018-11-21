@@ -13,11 +13,6 @@ const appRoutes: Routes = [
         path: 'cars',
         component: CarsPageComponent
     },
-    // запись  path: 'cars/:id' (вместо id любую переменную ставь)
-    // это для перехода на внутренние страницы каждой из машин (динамически)
-    // далее смотри cars-page.component.html
-
-    // теперь зададим нов динам переменную
     {
         path: 'cars/:id/:name',
         component: CatPageComponent

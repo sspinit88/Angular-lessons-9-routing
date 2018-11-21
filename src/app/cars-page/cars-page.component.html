@@ -4,15 +4,6 @@
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let car of cars">
 
-    <!-- у каждой страницы появится адрес перехода -->
-    <!-- далее переходиим в компонент.ts -->
-
-    <!-- [queryParams] - параметр [routerLink] - (s2) - -->
-    <!-- используя ее получим в адресной строке '../Ford?year=2010&color=red'  -->
-
-    <!-- [fragment] - параметр [routerLink] (s3) - -->
-    <!-- используя ее получим в адресной строке '../Ford?year=2010&color=red#pic'  -->
-
     <a [routerLink]="['/cars', car.id, car.name]"
        [queryParams]="{year: car.year, color: car.color}"
        fragment="pic"
