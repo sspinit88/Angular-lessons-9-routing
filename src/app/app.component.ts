@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styles: [` 
-        .navbar-toggler.active {
+        li.active {
             border: 1px solid red;
         }
   `]
