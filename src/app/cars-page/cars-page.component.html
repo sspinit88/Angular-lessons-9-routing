@@ -1,22 +1,26 @@
 <h2>Страница машин</h2>
 <hr>
 
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let car of cars">
+<div class="row">
+  <div class="col-xs-6">
 
-    <!-- у каждой страницы появится адрес перехода -->
-    <!-- далее переходиим в компонент.ts -->
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let car of cars">
+        <a [routerLink]="['/cars', car.id, car.name]"
+           [queryParams]="{year: car.year, color: car.color}"
+           fragment="pic"
+        >
+          {{car.name}}</a>
+      </li>
+    </ul>
 
-    <!-- [queryParams] - параметр [routerLink] - (s2) - -->
-    <!-- используя ее получим в адресной строке '../Ford?year=2010&color=red'  -->
+  </div>
+</div>
 
-    <!-- [fragment] - параметр [routerLink] (s3) - -->
-    <!-- используя ее получим в адресной строке '../Ford?year=2010&color=red#pic'  -->
+<div class="col-xs-6">
+  <router-outlet></router-outlet>
+</div>
 
-    <a [routerLink]="['/cars', car.id, car.name]"
-       [queryParams]="{year: car.year, color: car.color}"
-       fragment="pic"
-    >
-      {{car.name}}</a>
-  </li>
-</ul>
+
+
+
