@@ -2,7 +2,6 @@
     <nav style="margin-bottom: 20px; display: flex" class="navbar navbar-expand-lg  navbar-light bg-light">
         <div class="container-fluid">
             <ul class="nav">
-
                 <!-- указываем путь к страницам -->
                 <!-- меняем ркуа на routerLink, стр перестанет перезагружаться при смене контента -->
 
@@ -14,17 +13,13 @@
                 <!-- exact - параметр, принимающий только true или false, и если будет стоять true, то класс будет
                 добавляться, если находимся на указанном роуте -->
 
-                <li class="navbar-toggler"
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{exact: true}"
-                >
+                <li routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}" >
                     <a routerLink="/">Главная</a>
                 </li>
 
 
-                <li class="navbar-toggler"
-                    routerLinkActive="active"
-                >
+                <li routerLinkActive="active">
                     <a [routerLink]="'/cars'">Машины</a>
                 </li>
 
